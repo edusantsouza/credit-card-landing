@@ -26,6 +26,7 @@ item.addEventListener('input', function(){
     } else if (item.className === 'box input_year') {
       cardYear.textContent = inputCardYear.value 
     } else if (item.className ===  'input_cvc') {
-     cardCVC.textContent = inputCardCVC.value 
+     cardCVC.textContent = inputCardCVC.value
     }
 })})
+

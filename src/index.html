@@ -23,9 +23,11 @@
       <nav class="info_card">
         <h1 class="number_in_card">1234 5678 9123 4567</h1>
         <span class="name_in_card">John Doe</span>
-        <span class="exp_month">MM</span>
-        <span>/</span>
-        <span class="exp_year">YY</span>
+        <aside class="exp-date">
+          <span class="exp_month">MM</span>
+          <span class="slash-cvc">/</span>
+          <span class="exp_year">YY</span>
+        </aside>
       </nav>
     </div>
     <div class="card_bg_back">
@@ -38,22 +40,23 @@
     <form class="form_card" action="">
       <div class="inputs">
         <label for="card_name">CARDHOLDER NAME</label>
-        <input type="text" class="input_name" placeholder="e.g. JOHN DOE">
+        <input type="text" class="input_name" maxlength="30" placeholder="e.g. JOHN DOE">
         <label for="card_number">CARD NUMBER</label>
-        <input type="number" class="input_number" maxlength="16" placeholder="e.g. 1234 5678 9123 4567">
+        <input class="input_number" type="number" onKeyPress="if(this.value.length==16) return false;" placeholder="e.g. 1234 5678 9123 4567" />
+
       </div>
       <div class="inputs_2">
         <article class="dates">
           <label for="card_name">EXP. DATE(MM/YY)</label>
           <aside class="dates_input">
-            <input class="box input_month" maxlength="2" type="number" placeholder="MM">
-            <input class="box input_year" maxlength="2" type="number" placeholder="YY">
+            <input class="box input_month" type="number" onKeyPress="if(this.value.length==2) return false; if(this.value > 12) return false;" placeholder="MM" />
+            <input class="box input_year" type="number" onKeyPress="if(this.value.length==2) return false;" placeholder="YY" />
           </aside>
         </article>
         <article class="cvc">
           <label for="card_name">CVC</label>
           <aside class="cvc_input">
-            <input type="number" maxlength="3" class="input_cvc" placeholder="e.g. 123">
+            <input class="input_cvc" type="number" onKeyPress="if(this.value.length==3) return false;" placeholder="e.g. 123" />
           </aside>
         </article>
       </div>
